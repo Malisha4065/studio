@@ -122,7 +122,7 @@ const SpeedReader: FC<SpeedReaderProps> = ({ text, onExit }) => {
               <BookText className="h-6 w-6" />
             </Button>
           </div>
-          <div className="text-center text-sm text-muted-foreground tabular-nums pb-12">
+          <div className="text-center text-sm text-muted-foreground tabular-nums pb-24">
             <p>Word {Math.min(currentIndex + 1, words.length)} of {words.length}</p>
           </div>
         </footer>
