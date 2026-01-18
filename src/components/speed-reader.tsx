@@ -39,6 +39,18 @@ const SpeedReader: FC<SpeedReaderProps> = ({ text, onExit }) => {
     }
   }, [currentIndex, words.length]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space") {
+        e.preventDefault();
+        togglePlay();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isPlaying, currentIndex, words.length]);
+
 
   const togglePlay = () => {
     if (currentIndex >= words.length - 1) {
