@@ -80,7 +80,12 @@ const SpeedReader: FC<SpeedReaderProps> = ({ text, onExit }) => {
       )}
       <div className="flex flex-col h-screen w-full p-4 sm:p-6 md:p-8">
         <header className="flex justify-between items-center w-full">
-          <h1 className="text-xl font-bold text-foreground tracking-tight">SwiftRead</h1>
+          <h1
+            className="text-xl font-bold text-foreground tracking-tight cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={onExit}
+          >
+            SwiftRead
+          </h1>
           <Button variant="ghost" size="icon" onClick={onExit} aria-label="Exit Reader">
             <X className="h-6 w-6" />
           </Button>
